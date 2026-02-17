@@ -1,0 +1,19 @@
+<header class="site-header">
+  <nav aria-label="Main navigation">
+    <a routerLink="/" class="brand" aria-label="Home">
+      @if (logoUrl()) {
+        <img [src]="logoUrl()" alt="Logo" class="logo" />
+      }
+    </a>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li>
+          <a routerLink="/" [attr.aria-label]="'nav.home' | translate">{{
+            'nav.home' | translate
+          }}</a>
+        </li>
+      </ul>
+      <app-language-switcher [availableLanguages]="availableLanguages()" />
+    </div>
+  </nav>
+</header>

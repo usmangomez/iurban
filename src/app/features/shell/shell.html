@@ -1,0 +1,8 @@
+<app-skip-nav/>
+<app-header
+  [logoUrl]="brandingStore.logoUrl()"
+  [availableLanguages]="brandingStore.availableLanguages()"
+/>
+<main id="main-content" tabindex="-1">
+  <router-outlet/>
+</main>

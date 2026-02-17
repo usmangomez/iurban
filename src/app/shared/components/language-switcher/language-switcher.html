@@ -1,0 +1,12 @@
+@if (availableLanguages().length > 1) {
+  <select
+    class="lang-select"
+    [value]="translateService.currentLang()"
+    (change)="switchLang($any($event.target).value)"
+    aria-label="Language selector"
+  >
+    @for (lang of availableLanguages(); track lang) {
+      <option [value]="lang">{{ lang | uppercase }}</option>
+    }
+  </select>
+}

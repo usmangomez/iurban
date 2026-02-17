@@ -1,0 +1,12 @@
+{
+  "nav.home": "Inicio",
+  "home.heading": "Contenido reciente",
+  "home.loading": "Cargando contenido...",
+  "home.error": "Error al cargar contenido: {{error}}",
+  "home.readMore": "Leer más sobre {{title}}",
+  "detail.loading": "Cargando artículo...",
+  "detail.error": "Error al cargar artículo: {{error}}",
+  "detail.by": "Por",
+  "footer.rights": "Todos los derechos reservados.",
+  "skipNav": "Saltar al contenido principal"
+}

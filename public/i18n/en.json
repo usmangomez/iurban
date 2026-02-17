@@ -1,0 +1,12 @@
+{
+  "nav.home": "Home",
+  "home.heading": "Latest Content",
+  "home.loading": "Loading content...",
+  "home.error": "Failed to load content: {{error}}",
+  "home.readMore": "Read more about {{title}}",
+  "detail.loading": "Loading article...",
+  "detail.error": "Failed to load article: {{error}}",
+  "detail.by": "By",
+  "footer.rights": "All rights reserved.",
+  "skipNav": "Skip to main content"
+}
