@@ -1,7 +1,7 @@
 <section class="events">
   <app-carousel [items]="$any(events())">
     <ng-template carouselItem let-item>
-      <app-card [image]="$any(item).image" [title]="$any(item).name.es"></app-card>
+      <app-card [image]="$any(item).image" [title]="$any(item).name | localize"></app-card>
     </ng-template>
   </app-carousel>
 </section>
