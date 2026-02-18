@@ -1,0 +1,22 @@
+<section class="hero">
+  <video
+    class="hero__video" autoplay muted loop playsinline>
+    <source [src]="videoSrc()" type="video/mp4">
+  </video>
+
+  <div class="hero__overlay"></div>
+
+  <div class="hero__content">
+    <section class="hero__content__inner">
+      <img [src]="brandingStore.secondaryLogoUrl()">
+      <h1>Planifica tu visita a</h1>
+      <h1>{{ title() }}</h1>
+    </section>
+
+    <section class="hero__content__search">
+      <input type="text">
+      <button>Buscar</button>
+      <button>Consultar con ia</button>
+    </section>
+  </div>
+</section>

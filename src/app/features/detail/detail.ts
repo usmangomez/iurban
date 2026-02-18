@@ -1,9 +1,10 @@
 import { Component, effect, inject, input } from '@angular/core';
 import { DetailStore } from './store/detail.store';
+import { DetailSkeleton } from './components/detail-skeleton/detail-skeleton';
 
 @Component({
   selector: 'app-detail',
-  imports: [],
+  imports: [DetailSkeleton],
   providers: [DetailStore],
   templateUrl: './detail.html',
   styleUrl: './detail.scss',

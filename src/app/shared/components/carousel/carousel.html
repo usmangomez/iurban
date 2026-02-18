@@ -1,0 +1,33 @@
+<div class="carousel">
+  <button
+    class="carousel__btn carousel__btn--prev"
+    (click)="prev()"
+    [disabled]="!canGoPrev()"
+    aria-label="Previous">
+    <span>&#8249;</span>
+  </button>
+
+  <div class="carousel__viewport">
+    <div
+      class="carousel__track"
+      [style.--visible-count]="visibleCount()"
+      [style.transform]="trackTransform()">
+      @for (item of items(); track $index) {
+        <div class="carousel__slide">
+          <ng-container
+            [ngTemplateOutlet]="itemTemplate().template"
+            [ngTemplateOutletContext]="{ $implicit: item }">
+          </ng-container>
+        </div>
+      }
+    </div>
+  </div>
+
+  <button
+    class="carousel__btn carousel__btn--next"
+    (click)="next()"
+    [disabled]="!canGoNext()"
+    aria-label="Next">
+    <span>&#8250;</span>
+  </button>
+</div>

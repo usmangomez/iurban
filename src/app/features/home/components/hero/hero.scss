@@ -1,0 +1,47 @@
+.hero {
+  height: 400px;
+  position: relative;
+
+  &__video {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__content {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    width: 100%;
+    height: 100%;
+
+    &__inner {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+
+      img {
+        width: 60px;
+        align-self: center;
+      }
+    }
+  }
+}

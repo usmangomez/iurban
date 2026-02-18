@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
-import { DatePipe } from '@angular/common';
 import { HomeStore } from './store/home.store';
-import { TranslatePipe } from '../../shared/pipes/translate.pipe';
+import { Hero } from './components/hero/hero';
+import { Events } from './components/events/events';
+import { HomeSkeleton } from './components/home-skeleton/home-skeleton';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, DatePipe, TranslatePipe],
+  imports: [Hero, Events, HomeSkeleton],
   providers: [HomeStore],
   templateUrl: './home.html',
   styleUrl: './home.scss',

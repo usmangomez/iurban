@@ -1,5 +1,6 @@
-<section aria-labelledby="home-heading">
-  <div class="home-header">
-
-  </div>
-</section>
+@if (store.isLoading()) {
+  <app-home-skeleton></app-home-skeleton>
+} @else {
+  <app-hero [hero]="store.hero()"></app-hero>
+  <app-events [events]="store.events()"></app-events>
+}

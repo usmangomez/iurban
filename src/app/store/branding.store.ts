@@ -1,12 +1,5 @@
 import { computed, inject } from '@angular/core';
-import {
-  patchState,
-  signalStore,
-  withComputed,
-  withHooks,
-  withMethods,
-  withState,
-} from '@ngrx/signals';
+import { patchState, signalStore, withComputed, withHooks, withMethods, withState, } from '@ngrx/signals';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
 import { tapResponse } from '@ngrx/operators';
 import { HttpClient } from '@angular/common/http';
@@ -27,10 +20,11 @@ const initialState: BrandingState = {
 };
 
 export const BrandingStore = signalStore(
-  { providedIn: 'root' },
+  {providedIn: 'root'},
   withState(initialState),
   withComputed((store) => ({
     logoUrl: computed(() => store.data()?.appStyle?.logo?.value ?? ''),
+    secondaryLogoUrl: computed(() => store.data()?.appStyle?.logoList?.secondaryLogo?.value ?? ''),
     primaryColor: computed(() => store.data()?.appStyle?.corpColor1 ?? ''),
     secondaryColor: computed(() => store.data()?.appStyle?.corpColor2 ?? ''),
     headerColor: computed(() => store.data()?.appStyle?.headerColor ?? ''),
@@ -42,17 +36,17 @@ export const BrandingStore = signalStore(
   withMethods((store, http = inject(HttpClient), translate = inject(TranslateService)) => ({
     load: rxMethod<void>(
       pipe(
-        tap(() => patchState(store, { isLoading: true, error: null })),
+        tap(() => patchState(store, {isLoading: true, error: null})),
         switchMap(() =>
           http.get<Branding>('/api/get-common-app/emt').pipe(
             tapResponse({
               next: (data) => {
-                patchState(store, { data, isLoading: false });
+                patchState(store, {data, isLoading: false});
                 const langs = data.lang?.availableLanguages ?? ['es'];
                 translate.setAvailableLanguages(langs);
                 translate.use(data.lang?.mainLanguage ?? langs[0]);
               },
-              error: (err: Error) => patchState(store, { error: err.message, isLoading: false }),
+              error: (err: Error) => patchState(store, {error: err.message, isLoading: false}),
             }),
           ),
         ),
