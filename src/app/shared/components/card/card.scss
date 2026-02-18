@@ -9,6 +9,8 @@
   height: 260px;
   width: 100%;
 
+  cursor: pointer;
+
   &:hover {
     box-shadow: var(--shadow-md);
   }
